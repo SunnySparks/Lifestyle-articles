@@ -5,6 +5,7 @@ ruby '2.5.8'
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 gem 'bootstrap', '~> 5.0.1'
 gem 'hirb', '~> 0.7.3'
+gem 'jquery-rails'
 gem 'rubocop', '~> 1.18', '>= 1.18.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
