@@ -8,5 +8,6 @@ class SessionsController < ApplicationController
     else
       message = 'Something went wrong, make sure your username is correct'
       redirect_to login_path, notice: message
+    end
   end
 end
