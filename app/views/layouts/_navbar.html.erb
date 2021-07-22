@@ -4,22 +4,23 @@
 
         <nav>
             <ul>
-                <li></li>
+                <li><%= link_to 'New Article', new_article_url %></li>
+                <li><%= link_to 'New Category', new_category_url %></li>
+                <li><%= link_to 'Categories', categories_url %></li>
             </ul>
         </nav>
     </div>
 </header>
 
 <div class="banner">
-  <%= link_to article_path(@voted_article) do %>
-  <%= image_tag(url_for(display_image(@voted_article)), class: 'banner__img') %>
+  
+  
   <div class="banner__content">
     <h1 class="banner__content-title">
-      <%= @voted_article.title %>
+      
     </h1>
     <p class="banner__content-description">
-      <%= truncated_card_content(@voted_article.content) %>
+      
     </p>
   </div>
-  <% end %>
 </div>
