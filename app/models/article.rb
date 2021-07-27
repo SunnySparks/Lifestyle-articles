@@ -7,7 +7,7 @@ class Article < ApplicationRecord
   has_one_attached :avatar
   has_many :artcats, dependent: :destroy
   has_many :categories, through: :artcats
-
+  belongs_to :categories
   has_many :votes
   has_many :voters, through: :votes, class_name: 'User'
 

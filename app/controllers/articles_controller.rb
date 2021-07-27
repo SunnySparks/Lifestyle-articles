@@ -11,7 +11,10 @@ class ArticlesController < ApplicationController
   end
 
   def create
+
+    #@article = current_user.articles.new(title: params[:article_title], text: params[:article_text])
     @article = current_user.articles.new(article_params)
+    @article.save!(permitted)
     @categories = Category.all.map { |c| [c.name, c.id] }
 
     if @article.save
@@ -58,8 +61,9 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, :avatar)
+    params.require(:article).permit([:author_id, :title, {text: [:text]}])
   end
+
 
   def find_article
     @article = Article.find(params[:id])

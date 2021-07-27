@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :find_category, only: %i[show edit update]
+  #before_action :find_category, only: %i[show edit update]
 
   def index
     # @categories = Category.all.order(priority: :desc)
@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @articles = @category.articles
+    #@articles = @category.articles
   end
 
   def edit; end
@@ -44,7 +44,4 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:name, :priority)
   end
 
-  def find_category
-    @category = Category.find(params[:id])
-  end
 end
