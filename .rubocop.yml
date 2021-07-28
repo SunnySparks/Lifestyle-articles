@@ -47,6 +47,10 @@ Style/DoubleNegation:
   Enabled: false
 Style/DefWithParentheses:
   Enabled: false
+Style/RedundantAssignment:
+  Enabled: false
+Style/GuardClause:
+  Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 

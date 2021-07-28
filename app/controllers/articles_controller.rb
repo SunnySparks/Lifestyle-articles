@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :current_user
+  before_action :require_user
   before_action :find_article, only: %i[show update destroy]
 
   def index
@@ -11,8 +13,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = current_user.articles.new(article_params)
-    @categories = Category.all.map { |c| [c.name, c.id] }
+    # @article = current_user.articles.new(title: params[:article_title], text: params[:article_text])
+    @article = @current_user.articles.new(article_params)
+    # @categories = Category.all.map { |c| [c.name, c.id] }
 
     if @article.save
       @article.categories << Category.find_by(id: params[:categories])
@@ -58,7 +61,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, :avatar)
+    params.require(:article).permit(:title, :text)
   end
 
   def find_article
