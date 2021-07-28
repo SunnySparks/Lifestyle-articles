@@ -3,8 +3,8 @@ class CategoriesController < ApplicationController
 
   def index
     # @categories = Category.all.order(priority: :desc)
-    @categories = Category.all.includes(:articles).order(priority: :desc)
-    @voted_article = Article.includes([:avatar_attachment]).get_most_votes
+    #@categories = Category.all.includes(:articles).order(priority: :desc)
+    #@voted_article = Article.includes([:avatar_attachment]).get_most_votes
   end
 
   def new
