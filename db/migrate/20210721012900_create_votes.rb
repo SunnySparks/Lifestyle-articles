@@ -1,8 +1,8 @@
 class CreateVotes < ActiveRecord::Migration[5.2]
   def change
     create_table :votes do |t|
-      t.integer :User_id
-      t.integer :Article_id
+      t.references :user, null: false, foreign_key: true
+      t.references :article, null: false, foreign_key: true
 
       t.timestamps
     end
