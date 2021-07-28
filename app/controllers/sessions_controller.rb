@@ -7,7 +7,12 @@ class SessionsController < ApplicationController
       redirect_to user_path
     else
       message = 'Something went wrong, make sure your username is correct'
-      redirect_to login_path, notice: message
+      redirect_to root_path, notice: message
     end
+  end
+
+  def destroy
+    session.delete(:user_id)
+    redirect_to root_path
   end
 end

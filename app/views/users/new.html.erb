@@ -1,7 +1,39 @@
 <h1>Register</h1>
 
-<%= form_for User.new do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br>
-    <%= f.submit "Create Account" %>
-    <% end %>
+
+
+
+
+    <div class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-4">
+          <h2 class="title is-2 is-spaced has-text-centered">Create your account</h2>
+          
+            <%= form_for User.new do |f| %>
+                <%= f.label :name %>
+                <%= f.text_field :name %><br>
+                <%= f.submit "Create Account" %>
+            <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-4">
+        <h2 class="title is-2 is-spaced has-text-centered">Have an account? Log In</h2>
+
+        <%= form_for(:session, url: login_path) do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "input", required: true %>
+            <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
