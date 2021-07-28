@@ -1,10 +1,9 @@
 class CategoriesController < ApplicationController
-  #before_action :find_category, only: %i[show edit update]
-
+  # before_action :find_category, only: %i[show edit update]
   def index
     # @categories = Category.all.order(priority: :desc)
-    #@categories = Category.all.includes(:articles).order(priority: :desc)
-    #@voted_article = Article.includes([:avatar_attachment]).get_most_votes
+    # @categories = Category.all.includes(:articles).order(priority: :desc)
+    # @voted_article = Article.includes([:avatar_attachment]).get_most_votes
   end
 
   def new
@@ -23,7 +22,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    #@articles = @category.articles
+    # @articles = @category.articles
   end
 
   def edit; end
@@ -43,5 +42,4 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:name, :priority)
   end
-
 end

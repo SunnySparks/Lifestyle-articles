@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  #before_validation user.password
+  # before_validation user.password
   def new
-    @User = User.new
+    @user = User.new
   end
 
   def create
@@ -23,5 +23,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name)
   end
-
 end
