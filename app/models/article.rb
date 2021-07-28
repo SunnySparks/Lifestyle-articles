@@ -5,8 +5,8 @@ class Article < ApplicationRecord
 
   belongs_to :user, class_name: 'User', foreign_key: 'user_id'
   #  has_one_attached :avatar
-  #  has_many :artcats, dependent: :destroy
-  #  has_many :categories, through: :artcats
+  has_many :artcatego, dependent: :destroy
+  has_many :categories, through: :artcatego
   #  belongs_to :categories
   has_many :votes
   has_many :voters, through: :votes, class_name: 'User'

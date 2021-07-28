@@ -18,9 +18,10 @@ class ArticlesController < ApplicationController
     # @categories = Category.all.map { |c| [c.name, c.id] }
 
     if @article.save
+      byebug
       @article.categories << Category.find_by(id: params[:categories])
       flash[:success] = 'New article created!'
-      redirect_to @article
+      redirect_to index_path
     else
       flash[:error] = 'Something went wrong'
       render 'new'

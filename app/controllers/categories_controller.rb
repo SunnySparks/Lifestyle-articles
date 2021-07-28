@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   # before_action :find_category, only: %i[show edit update]
+  before_action :require_user, only: %i[create new]
   def index
     # @categories = Category.all.order(priority: :desc)
     # @categories = Category.all.includes(:articles).order(priority: :desc)
