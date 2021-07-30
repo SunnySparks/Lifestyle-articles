@@ -14,10 +14,14 @@
          <div>
            <p class="card__content">
              <%= art.text %>
-             <%= art.votes.count %>
+              
              
            </p>
              <%= link_to 'Read more', article_path(art.id), class: 'card__read-more' %>
+             Votes
+              <%= art.get_upvotes.size %>
          </div>
      </article>
 <% end %>
+
+<%= link_to 'Back', :back %>

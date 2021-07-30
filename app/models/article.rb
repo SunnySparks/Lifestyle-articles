@@ -1,7 +1,7 @@
 class Article < ApplicationRecord
   belongs_to :category
   belongs_to :user
-  has_many :votes
+  acts_as_votable
 
   def score
     votes.count

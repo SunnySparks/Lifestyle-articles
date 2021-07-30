@@ -1,4 +1,8 @@
 <h1>Articles#show</h1>
 <p>Find me in app/views/articles/show.html.erb</p>
 
-<%= render 'vote' %>
+<%= link_to like_article_path(@article), method: :put do %>
+    Vote!
+    <%= @article.get_upvotes.size %>
+  <% end %>
+  <%= link_to 'Back', :back %>

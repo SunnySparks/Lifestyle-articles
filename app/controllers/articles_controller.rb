@@ -28,8 +28,10 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @votes = @article.votes.count
+    @articles = Article.all
+    @categories = Category.all.includes(:articles).order(priority: :desc)
   end
+
 
   def edit
     @article = Article.find(params[:id])
@@ -56,6 +58,18 @@ class ArticlesController < ApplicationController
       flash[:error] = 'Something went wrong'
     end
     redirect_to root_url
+  end
+
+  def upvote 
+    @article = Article.find(params[:id])
+    @article.upvote_by current_user
+    redirect_back(fallback_location: root_path)
+  end  
+  
+  def downvote
+    @article = Article.find(params[:id])
+    @article.downvote_by current_user
+    redirect_to categories_path
   end
 
   private
