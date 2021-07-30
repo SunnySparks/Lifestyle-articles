@@ -32,7 +32,6 @@ class ArticlesController < ApplicationController
     @categories = Category.all.includes(:articles).order(priority: :desc)
   end
 
-
   def edit
     @article = Article.find(params[:id])
     @categories = Category.all.map { |c| [c.name, c.id] }
@@ -60,12 +59,12 @@ class ArticlesController < ApplicationController
     redirect_to root_url
   end
 
-  def upvote 
+  def upvote
     @article = Article.find(params[:id])
     @article.upvote_by current_user
     redirect_back(fallback_location: root_path)
-  end  
-  
+  end
+
   def downvote
     @article = Article.find(params[:id])
     @article.downvote_by current_user

@@ -1,16 +1,15 @@
 class ArtcategoController < ApplicationController
+  def new
+    @artcatego = Artcatego.new
+  end
 
-    def new
-        @artcatego = Artcatego.new
-    end
+  def create
+    @artcatego = Artcatego.new(artcatego_params)
+  end
 
-    def create
-        @artcatego = Artcatego.new(artcatego_params)
-    end
+  private
 
-    private
-
-    def artcatego_params
-        params.require(:artcatego).permit(:article_id, :category_id)
-      end
+  def artcatego_params
+    params.require(:artcatego).permit(:article_id, :category_id)
+  end
 end
