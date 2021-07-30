@@ -10,24 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_28_213122) do
+ActiveRecord::Schema.define(version: 2021_07_29_233147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "artcategos", force: :cascade do |t|
-    t.bigint "article_id"
-    t.bigint "category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "articles", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "category_id"
+    t.bigint "user_id"
     t.string "title"
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
@@ -45,14 +40,15 @@ ActiveRecord::Schema.define(version: 2021_07_28_213122) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "article_id", null: false
+    t.bigint "user_id"
+    t.bigint "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_votes_on_article_id"
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
+  add_foreign_key "articles", "categories"
   add_foreign_key "articles", "users"
   add_foreign_key "votes", "articles"
   add_foreign_key "votes", "users"

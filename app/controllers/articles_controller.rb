@@ -5,21 +5,21 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @categories = Category.all.includes(:articles).order(priority: :desc)
   end
 
   def new
     @article = Article.new
+    @category = Category.new
     @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
   def create
     # @article = current_user.articles.new(title: params[:article_title], text: params[:article_text])
     @article = @current_user.articles.new(article_params)
-    # @categories = Category.all.map { |c| [c.name, c.id] }
-
+    @article.category_id = params[:category_id]
+    byebug
     if @article.save
-      byebug
-      @article.categories << Category.find_by(id: params[:categories])
       flash[:success] = 'New article created!'
       redirect_to index_path
     else
@@ -62,7 +62,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :category_id)
   end
 
   def find_article

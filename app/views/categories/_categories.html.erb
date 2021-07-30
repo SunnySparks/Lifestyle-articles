@@ -1,0 +1,3 @@
+<% @categories.each do |cat|%>
+  <%= link_to "#{cat.name}", category_path(cat.id) %>
+<% end %>
