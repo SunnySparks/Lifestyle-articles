@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :destroy, :create]
   resources :articles, only: [:new, :create, :show, :edit, :update, :destroy] do
-    resources :votes, only: [:new, :create, :destroy]
+    resources :votes, only: [:create, :destroy]
   end
   resources :categories, only: [:index, :new, :new, :create, :update, :show]
 

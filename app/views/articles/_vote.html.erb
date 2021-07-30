@@ -1,0 +1,4 @@
+<%= form_for @article.votes.new do |f| %>
+    <%= f.hidden_field :user, value: current_user %>
+    <%= f.submit 'Vote', class: 'vote-submit' %>
+<% end %>

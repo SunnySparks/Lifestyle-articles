@@ -2,7 +2,7 @@
 <p>Find me in app/views/categories/show.html.erb</p>
 
 
-<%= @articles.each do |art| %>
+<% @articles.each do |art| %>
   <%= art.title %>
     <article class="card">
 
@@ -10,21 +10,14 @@
          <h2 class="card__title">
          </h2>
          <div class="card__subtitle">
-           <%= art.title %>
          </div>
          <div>
            <p class="card__content">
              <%= art.text %>
+             <%= art.votes.count %>
+             
            </p>
              <%= link_to 'Read more', article_path(art.id), class: 'card__read-more' %>
          </div>
-         <div class='card__vote'>
-           <%= "art" %>
-           <span>
-             <%= "art.votes.count" %>
-             votes
-           </span>
-         </div>
-       </div>
      </article>
 <% end %>
