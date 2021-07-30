@@ -5,22 +5,22 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @categories = Category.all.includes(:articles).order(priority: :desc)
   end
 
   def new
     @article = Article.new
+    @category = Category.new
     @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
   def create
     # @article = current_user.articles.new(title: params[:article_title], text: params[:article_text])
     @article = @current_user.articles.new(article_params)
-    # @categories = Category.all.map { |c| [c.name, c.id] }
-
+    @article.category_id = params[:category_id]
     if @article.save
-      @article.categories << Category.find_by(id: params[:categories])
       flash[:success] = 'New article created!'
-      redirect_to @article
+      redirect_to categories_path
     else
       flash[:error] = 'Something went wrong'
       render 'new'
@@ -28,7 +28,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @votes = @article.votes.count
+    @articles = Article.all
+    @categories = Category.all.includes(:articles).order(priority: :desc)
   end
 
   def edit
@@ -58,10 +59,22 @@ class ArticlesController < ApplicationController
     redirect_to root_url
   end
 
+  def upvote
+    @article = Article.find(params[:id])
+    @article.upvote_by current_user
+    redirect_back(fallback_location: root_path)
+  end
+
+  def downvote
+    @article = Article.find(params[:id])
+    @article.downvote_by current_user
+    redirect_to categories_path
+  end
+
   private
 
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :category_id)
   end
 
   def find_article

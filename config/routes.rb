@@ -15,7 +15,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :destroy, :create]
   resources :articles, only: [:new, :create, :show, :edit, :update, :destroy] do
-    resources :votes, only: [:new, :create, :destroy]
+    member do
+      put "like", to: "articles#upvote"
+      put "dislike", to: "articles#downvote"
+    end
   end
   resources :categories, only: [:index, :new, :new, :create, :update, :show]
 

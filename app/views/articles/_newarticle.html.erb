@@ -5,7 +5,7 @@
     <%= form.text_field :text %></br>
     <div class="control">
     <%= form.label :category, class: 'label | text-is-white' %>
-    <%= select_tag :categories, options_for_select(@categories), class: 'input' %>
+    <%= select_tag :category_id, options_for_select(@categories), class: 'input' %>
   </div>
     <%= form.submit%>
    <% end %>

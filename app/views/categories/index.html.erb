@@ -1,7 +1,10 @@
 <h1>Categories#index</h1>
 <p>Find me in app/views/categories/index.html.erb</p>
 
-<main>
+<% if logged_in? %>
+<div class="p-2 "><span>Welcome, <%= current_user.name %>!</span></div>
+<% end %>
 
+<main>
   <%= render 'categories' %>
 </main>

@@ -1,8 +1,10 @@
 class CategoriesController < ApplicationController
   # before_action :find_category, only: %i[show edit update]
+  before_action :require_user, only: %i[create new]
   def index
+    @article = Article.new
     # @categories = Category.all.order(priority: :desc)
-    # @categories = Category.all.includes(:articles).order(priority: :desc)
+    @categories = Category.all.includes(:articles).order(priority: :desc)
     # @voted_article = Article.includes([:avatar_attachment]).get_most_votes
   end
 
@@ -12,6 +14,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
+    @category.save!
     if @category.save
       flash[:success] = 'Category successfully created'
       redirect_to categories_path
@@ -22,7 +25,9 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    # @articles = @category.articles
+    @articles = Category.find(params[:id]).articles
+    # @articles = Article.all
+    # @category = @category.articles
   end
 
   def edit; end

@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  User_id: 1
-  Article_id: 1
+  user: one
+  article: one
 
 two:
-  User_id: 1
-  Article_id: 1
+  user: two
+  article: two

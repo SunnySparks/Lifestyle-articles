@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.8'
+gem 'acts_as_votable'
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 gem 'hirb', '~> 0.7.3'
 gem 'rubocop', '~> 1.18', '>= 1.18.3'
