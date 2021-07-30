@@ -18,10 +18,9 @@ class ArticlesController < ApplicationController
     # @article = current_user.articles.new(title: params[:article_title], text: params[:article_text])
     @article = @current_user.articles.new(article_params)
     @article.category_id = params[:category_id]
-    byebug
     if @article.save
       flash[:success] = 'New article created!'
-      redirect_to index_path
+      redirect_to categories_path
     else
       flash[:error] = 'Something went wrong'
       render 'new'
