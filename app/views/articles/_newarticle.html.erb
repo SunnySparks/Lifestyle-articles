@@ -3,6 +3,8 @@
     <%= form.text_field :title %></br>
     <%= form.label :text, "Add your text here" %>
     <%= form.text_field :text %></br>
+    <%= form.label "Image" %>
+    <%= form.file_field :avatar %></br>
     <div class="control">
     <%= form.label :category, class: 'label | text-is-white' %>
     <%= select_tag :category_id, options_for_select(@categories), class: 'input' %>

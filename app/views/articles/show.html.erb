@@ -1,6 +1,27 @@
 <h1>Articles#show</h1>
 <p>Find me in app/views/articles/show.html.erb</p>
 
+<% if @article.avatar.attached? %>
+<image src="<%=(url_for(@article.avatar))%>">
+<% end %>
+    <%= @article.title %>
+      <article class="card">
+  
+         <div class="card__info">
+           <h2 class="card__title">
+           </h2>
+           <div class="card__subtitle">
+           </div>
+           <div>
+             <p class="card__content">
+               <%= @article.text %>
+
+               
+             </p>
+
+           </div>
+       </article>
+
 <%= link_to like_article_path(@article), method: :put do %>
     Vote!
     <%= @article.get_upvotes.size %>

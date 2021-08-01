@@ -28,6 +28,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article = Article.find(params[:id])
     @articles = Article.all
     @categories = Category.all.includes(:articles).order(priority: :desc)
   end
@@ -74,7 +75,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text, :category_id)
+    params.require(:article).permit(:title, :text, :category_id, :avatar)
   end
 
   def find_article

@@ -14,7 +14,9 @@
          <div>
            <p class="card__content">
              <%= art.text %>
-              
+             <% if art.avatar.attached? %>
+              <image src="<%=(url_for(art.avatar))%>">
+            <% end %>
              
            </p>
              <%= link_to 'Read more', article_path(art.id), class: 'card__read-more' %>
