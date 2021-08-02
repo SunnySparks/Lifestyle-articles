@@ -11,10 +11,9 @@
 
   <% @categories.each do |cat| %>
     <%= cat.name %>
+    <%= cat.articles.first.title %>
   <% end %>
 
-  <% @articles.each do |art| %>
-  <% end %>
 
 
 

@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   before_action :require_user, only: %i[create new]
   def index
     @article = Article.new
-    @articles = Article.all
+    @articles = Article.all.order(cached_votes_score: :desc)
     # @categories = Category.all.order(priority: :desc)
     @categories = Category.all.includes(:articles).order(priority: :desc)
     # @voted_article = Article.includes([:avatar_attachment]).get_most_votes
@@ -26,9 +26,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @articles = Category.find(params[:id]).articles
-    # @articles = Article.all
-    # @category = @category.articles
+    @article = Category.find(params[:id]).articles
+    @articles = Article.all.order(cached_votes_score: :desc)
   end
 
   def edit; end
