@@ -24,6 +24,13 @@
 
 <%= link_to like_article_path(@article), method: :put do %>
     Vote!
-    <%= @article.get_upvotes.size %>
-  <% end %>
+    
+<% end %>
+
+<%= link_to dislike_article_path(@article), method: :put do %>
+  Downvote
+<% end %>
+
+<%= @article.get_upvotes.size %>
+
   <%= link_to 'Back', :back %>

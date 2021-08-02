@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :find_article, only: %i[show update destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order(cached_votes_score: :desc)
     @categories = Category.all.includes(:articles).order(priority: :desc)
   end
 
@@ -69,7 +69,7 @@ class ArticlesController < ApplicationController
   def downvote
     @article = Article.find(params[:id])
     @article.downvote_by current_user
-    redirect_to categories_path
+    redirect_back(fallback_location: root_path)
   end
 
   private
