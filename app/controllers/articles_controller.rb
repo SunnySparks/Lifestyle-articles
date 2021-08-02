@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :find_article, only: %i[show update destroy]
 
   def index
-    @articles = Article.all(:order => "vote_total DESC")
+    @articles = Article.all
     @categories = Category.all.includes(:articles).order(priority: :desc)
   end
 
