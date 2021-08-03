@@ -1,5 +1,8 @@
 <div class="m-5 p-1"></div>
 <main class="container mt-5" role="main">
+
+
+
 <div class="jumbotron">
   <h1>Categories#index</h1>
   <p>Find me in app/views/categories/index.html.erb</p>
@@ -12,6 +15,8 @@
   <% @categories.each do |cat| %>
     <%= cat.name %>
     <%= cat.articles.first.title %>
+    <%= cat.articles.first.text %>
+    <%= image_tag(cat.articles.first.avatar) %>
   <% end %>
 
 
