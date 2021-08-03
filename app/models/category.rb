@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  validates :name, presence: true, uniqueness: true, length: { maximum: 10 }
+  validates :name, presence: true, uniqueness: true, length: { maximum: 40 }
   validates :priority, presence: true, inclusion: 1..5
 
   has_many :articles

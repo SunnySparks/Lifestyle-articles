@@ -15,20 +15,23 @@
 <main class="container mt-5" role="main">
 
 
-
 <div class="container p-4 main-article col-lg text-center">
 
-  
-    <% @categories.each do |cat| %>
-      <h3><%= cat.articles.first.title %></h3></br>
-      <p class="badge badge-primary"><%= cat.name %></p></br>
-      <%= image_tag(cat.articles.first.avatar) %></br>
-      </br>
-      <h5><%= cat.articles.first.text %></h5></br>
-    <% end %>
-  <a class="btn btn-lg btn-primary" href="https://blog.nubecolectiva.com" target="_blank" role="button">Blog &raquo;</a>
+
+      <% @firstcat.each do |cat| %>       
+        <% cat.articles.take(1).each do |c| %>
+          <h3><%= c.title %></h3></br>
+          <p class="badge badge-primary"><%= cat.name %></p></br>
+          <%= image_tag(c.avatar) %></br>
+          <h5><%= c.text %></h5></br>
+          <a class="btn btn-lg btn-primary" href="https://blog.nubecolectiva.com" target="_blank" role="button">Blog &raquo;</a>
+        </div>
+        <% end %>
+      <% end %>
   
 </div>
+
+
 
 <div class="container"></div>
 <div class="row"><div class="col-md-4">
