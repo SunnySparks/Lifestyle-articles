@@ -58,3 +58,8 @@ nav a {
   text-transform: uppercase;
   font-size: 0.875em;
 }
+
+.main-article {
+  
+    background-color: rgba(32, 178, 170);
+  }
