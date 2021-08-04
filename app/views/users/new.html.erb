@@ -1,39 +1,76 @@
-<h1>Register</h1>
 
 
 
 
 
-    <div class="section">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-4">
-          <h2 class="title is-2 is-spaced has-text-centered">Create your account</h2>
+  <div class="container-fluid ps-md-0">
+  <div class="row g-0">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+
           
-            <%= form_for User.new do |f| %>
-                <%= f.label :name %>
-                <%= f.text_field :name %><br>
-                <%= f.submit "Create Account" %>
-            <% end %>
+
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">You don't have an account? Create one</h3>
+
+
+
+
+              <div class="section">
+              <div class="container">
+                <div class="columns is-centered">
+                  <div class="column is-4">
+                    
+                      <%= form_for User.new do |f| %>
+                          <%= f.label :name %>
+                          <%= f.text_field :name %><br>
+                          <%= f.submit "Create Account", class: "btn btn-large btn-primary" %>
+                      <% end %>
+          
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+
+
+
+                <div class="form-check mb-3">
+
+                </div>
+
+            </div>
+          </div>
 
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="section">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-4">
-        <h2 class="title is-2 is-spaced has-text-centered">Have an account? Log In</h2>
+<style>
 
-        <%= form_for(:session, url: login_path) do |f| %>
-            <%= f.label :name %>
-            <%= f.text_field :name, class: "input", required: true %>
-            <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
-          <% end %>
+.login {
+    min-height: 100vh;
+  }
+  
+  .bg-image {
+    background-image: url('https://source.unsplash.com/WEQbe2jBg40/600x1200');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .login-heading {
+    font-weight: 300;
+  }
+  
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+  }
 
-        </div>
-      </div>
-    </div>
-  </div>
+</style>
