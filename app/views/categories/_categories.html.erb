@@ -1,3 +1,28 @@
+<div class="container">
+
+<div class="row border border-primary" > 
+    <% @categories.each do |cat| %> 
+      <div class="card-background" style="background-image: url(<%= cat.articles.first.avatar %>);">
+      <%= image_tag(cat.articles.first.avatar) %></br>    
+        <% cat.articles.take(1).each do |c| %>
+          
+          <div class="row border border-dark m-3 justify-content-evenly"> 
+            <div class="col-6 p-2">  
+              <h3><%= cat.name %></h3></br>
+              <h4><%= c.title %></h4></br>
+              <%= image_tag(c.avatar) %></br>
+              <span></span></br>
+              <a class="btn btn-lg btn-primary" href="https://blog.nubecolectiva.com" target="_blank" role="button">Blog &raquo;</a></br>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  
+</div>
+
+</div>
+
 <% @categories.each do |cat|%>
   <%= link_to "#{cat.name}", category_path(cat.id) %>
 <% end %>
