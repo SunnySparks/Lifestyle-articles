@@ -18,6 +18,8 @@
     <li>    
       <% if logged_in? %>
         <%= link_to "Log out", logout_path, class: 'text-white' %>
+      <% else %>
+        <%= link_to "Log In", login_url, class: 'text-white' %>
       <% end %>
     </li>
   </ul>

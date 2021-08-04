@@ -25,8 +25,8 @@
                   <div class="column is-4">
                     
                       <%= form_for User.new do |f| %>
-                          <%= f.label :name %>
                           <%= f.text_field :name %><br>
+                          <%= f.label :name %><br>
                           <%= f.submit "Create Account", class: "btn btn-large btn-primary" %>
                       <% end %>
           
@@ -40,6 +40,11 @@
 
                 <div class="form-check mb-3">
 
+                </div>
+
+                <div class="form-check mb-3">
+                <p>Do you have an account?</p>
+                  <%= link_to "Log In", login_url %>
                 </div>
 
             </div>
