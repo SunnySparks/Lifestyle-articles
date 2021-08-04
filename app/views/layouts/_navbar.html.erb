@@ -15,11 +15,18 @@
     <li class="nav-item">
       <%= link_to 'Categories', categories_url, class: 'text-white' %>
     </li>
-    <li>    
+     
       <% if logged_in? %>
-        <%= link_to "Log out", logout_path, class: 'text-white' %>
+        <li>  
+          <%= link_to "Log out", logout_path, class: 'text-white' %>
+        </li>
+        <li>  
+          <span class="text-white">Welcome, <%= current_user.name %>!</span>
+        </li>
       <% else %>
-        <%= link_to "Log In", login_url, class: 'text-white' %>
+        <li>  
+          <%= link_to "Log In", login_url, class: 'text-white' %>
+        </li>
       <% end %>
     </li>
   </ul>

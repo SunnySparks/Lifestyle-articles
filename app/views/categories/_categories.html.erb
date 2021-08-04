@@ -2,8 +2,7 @@
 
 <div class="row border border-primary" > 
     <% @categories.each do |cat| %> 
-      <div class="card-background" style="background-image: url(<%= cat.articles.first.avatar %>);">
-      <%= image_tag(cat.articles.first.avatar) %></br>    
+          
         <% cat.articles.take(1).each do |c| %>
           
           <div class="row border border-dark m-3 justify-content-evenly"> 
