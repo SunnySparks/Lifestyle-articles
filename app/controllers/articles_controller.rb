@@ -15,7 +15,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    # @article = current_user.articles.new(title: params[:article_title], text: params[:article_text])
     @article = @current_user.articles.new(article_params)
     @article.category_id = params[:category_id]
     if @article.save

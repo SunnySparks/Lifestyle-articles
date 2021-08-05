@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-  # before_action :find_category, only: %i[show edit update]
   before_action :require_user, only: %i[create new]
   def index
     @article = Article.new
