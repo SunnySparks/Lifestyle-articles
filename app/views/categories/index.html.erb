@@ -12,17 +12,7 @@
     <h3><%= vot.title %></h3></br>
       
     <p class="edica-blog-post-meta">
-      <% if vot.user_id == current_user.id %>
-      <%= link_to 'Edit', edit_article_path(vot.id), class: 'art-card__button-link btn-warning' %>
-      <%= link_to 'Delete', article_path(vot.id), method: :delete, class: 'art-card__button-link btn-danger' %>
-      <% end %>
-      <%= vot.get_upvotes.size %> Votes • 
-      <%= link_to like_article_path(vot.id), method: :put do %>
-        Vote! • 
-      <% end %>          
-      <%= link_to dislike_article_path(vot.id), method: :put do %>
-        Downvote
-       <% end %> 
+    • <%= vot.get_upvotes.size %> Votes • 
     </p>
 
     <%= image_tag(vot.avatar) %></br>
