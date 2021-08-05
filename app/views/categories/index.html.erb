@@ -1,34 +1,28 @@
-
-    <% if logged_in? %>
-      <div class="p-2 "><span>Welcome, <%= current_user.name %>!</span></div>
-    <% end %>
-  </h1>
-
 <div class="m-5 p-1"></div>
 
 
 
-<main class="container mt-5" role="main">
+<main class="container">
+
+  <div class="d-row">
+    <div class="container p-4 main-article col-lg text-center mt-5 mb-5">
 
 
-<div class="container p-4 main-article col-lg text-center">
+          <% @firstcat.each do |cat| %>       
+            <% cat.articles.take(1).each do |c| %>
+              <h3><%= c.title %></h3></br>
+              <p class="badge badge-primary"><%= cat.name %></p></br>
+              <%= image_tag(c.avatar) %></br>
+              <div class="m-3"></div>
+              <h5><%= c.text %></h5></br>
+              <%= link_to "See more", article_path(c) %>
+            <% end %>
+          <% end %>
+      
+    </div>
 
-
-      <% @firstcat.each do |cat| %>       
-        <% cat.articles.take(1).each do |c| %>
-          <h3><%= c.title %></h3></br>
-          <p class="badge badge-primary"><%= cat.name %></p></br>
-          <%= image_tag(c.avatar) %></br>
-          <h5><%= c.text %></h5></br>
-          <a class="btn btn-lg btn-primary" href="https://blog.nubecolectiva.com" target="_blank" role="button">Blog &raquo;</a>
-        </div>
-        <% end %>
-      <% end %>
-  
-</div>
-</main>
-
-
-<main>
-  <%= render 'categories' %>
+    <div class="container p-4">
+      <%= render 'categories' %>
+    </div>
+  </div>
 </main>

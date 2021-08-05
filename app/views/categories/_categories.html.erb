@@ -1,26 +1,35 @@
 <div class="container">
-
-<div class="row border border-primary" > 
+  <div class="row" >  
     <% @categories.each do |cat| %> 
-          
-        <% cat.articles.take(1).each do |c| %>
-          
-          <div class="row border border-dark m-3 justify-content-evenly"> 
-            <div class="col-6 p-2">  
-              <h3><%= cat.name %></h3></br>
-              <h4><%= c.title %></h4></br>
-              <%= image_tag(c.avatar) %></br>
-              <span></span></br>
-              <a class="btn btn-lg btn-primary" href="https://blog.nubecolectiva.com" target="_blank" role="button">Blog &raquo;</a></br>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  
-</div>
+      
 
+         
+          <% cat.articles.take(1).each do |c| %>
+ 
+            <div class="col-4 justify-content-evenly text-center p-2"> 
+              <div class="col p-2 cat-grid-cont">  
+                <h3><%= cat.name %></h3></br>
+                <h4><%= c.title %></h4></br>
+                <div class="thumbnail m-auto">
+                  <%= image_tag(c.avatar, class: 'thumbnail-img') %></br>
+                </div>
+                <span></span></br>
+              </div>
+            </div>
+
+          <% end %>
+          
+          
+          
+        
+      
+    <% end %>
+  </div>
 </div>
+  
+
+
+
 
 <% @categories.each do |cat|%>
   <%= link_to "#{cat.name}", category_path(cat.id) %>
