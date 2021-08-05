@@ -4,7 +4,7 @@
       
 
          
-          <% cat.articles.take(1).each do |c| %>
+          <% cat.articles.each do |c| %>
  
             <div class="col-4 justify-content-evenly text-center p-2"> 
               <div class="col p-2 cat-grid-cont">  
@@ -26,11 +26,3 @@
     <% end %>
   </div>
 </div>
-  
-
-
-
-
-<% @categories.each do |cat|%>
-  <%= link_to "#{cat.name}", category_path(cat.id) %>
-<% end %>

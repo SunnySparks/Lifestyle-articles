@@ -1,36 +1,62 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class="mt-2 pt-2">
 
-<% if @article.avatar.attached? %>
-<image src="<%=(url_for(@article.avatar))%>">
-<% end %>
-    <%= @article.title %>
-      <article class="card">
-  
-         <div class="card__info">
-           <h2 class="card__title">
-           </h2>
-           <div class="card__subtitle">
-           </div>
-           <div>
-             <p class="card__content">
-               <%= @article.text %>
+    <div class="mt-5 pt-5 mb-5">
+    <main class="blog-post">
+    <div class="container">      
 
-               
-             </p>
+        <h2 class="edica-page-title pb-1"><%= @article.title %></h2>
+          <p class="edica-blog-post-meta">
+            <% if @article.user_id == current_user.id %>
+              <%= link_to 'Edit', edit_article_path(@article.id), class: 'art-card__button-link btn-warning' %>
+              <%= link_to 'Delete', article_path(@article.id), method: :delete, class: 'art-card__button-link btn-danger' %>
+            <% end %>
+            <%= @article.get_upvotes.size %> Votes • 
+            <%= link_to like_article_path(@article.id), method: :put do %>
+              Vote! • 
+            <% end %>          
+            <%= link_to dislike_article_path(@article.id), method: :put do %>
+              Downvote
+            <% end %> 
+          </p>
+          <section class="blog-post-featured-img d-flex justify-content-center">
+            <% if @article.avatar.attached? %>
+              <image src="<%=(url_for(@article.avatar)) %>">
+            <% end %>
+          </section>
+          <section class="post-content">
+              <div class="row">
+                  <div class="col-lg-9 mx-auto" data-aos="fade-up">
+                  <%= @article.text %>
+                  </div>
+              </div>            
+          </div>
 
-           </div>
-       </article>
+              
+    </div>
+    <div class="pt-5 pb-5 container d-flex justify-content-center">
+    <%= link_to 'Back', :back, class: 'btn btn-light' %>
+  </div>
+    </main>
+  </div>
 
-<%= link_to like_article_path(@article), method: :put do %>
-    Vote!
-    
-<% end %>
 
-<%= link_to dislike_article_path(@article), method: :put do %>
-  Downvote
-<% end %>
 
-<%= @article.get_upvotes.size %>
 
-  <%= link_to 'Back', :back %>
+<style>
+
+.blog-post .edica-page-title {
+  text-align: center;
+}
+
+.blog-post .edica-blog-post-meta {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: #7d848b;
+  margin-bottom: 67px; }
+
+  .blog-post .blog-post-featured-img {
+    margin-bottom: 44px; }
+
+</style>

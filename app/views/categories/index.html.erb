@@ -14,7 +14,7 @@
               <p class="badge badge-primary"><%= cat.name %></p></br>
               <%= image_tag(c.avatar) %></br>
               <div class="m-3"></div>
-              <h5><%= c.text %></h5></br>
+              <h5 class="text-justify"><%= c.text %></h5></br>
               <%= link_to "See more", article_path(c) %>
             <% end %>
           <% end %>

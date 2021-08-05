@@ -61,12 +61,12 @@ nav a {
 
 .main-article {
   
-    background-color: rgba(32, 178, 170);
+    background-color: rgba(242, 242, 242);
   }
 
 .cat-grid-cont {
   
-  background-color: rgba(2, 91, 177);
+  background-color: rgba(248, 249, 250);
 }
   
 .card-background {
@@ -104,4 +104,8 @@ nav a {
   -webkit-transform: translate(-50%,-50%);
       -ms-transform: translate(-50%,-50%);
           transform: translate(-50%,-50%);
+}
+
+.navbar {
+  background-color: rgba(17, 17, 32);
 }
