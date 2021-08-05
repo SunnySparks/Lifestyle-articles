@@ -8,7 +8,7 @@
  
             <div class="col-4 justify-content-evenly text-center p-2"> 
               <div class="col p-2 cat-grid-cont">  
-                <h3><%= cat.name %></h3></br>
+                <h3><%= link_to "#{cat.name}", category_path(cat.id), class: 'text-dark' %></h3></br>
                 <h4><%= c.title %></h4></br>
                 <div class="thumbnail m-auto">
                   <%= image_tag(c.avatar, class: 'thumbnail-img') %></br>
