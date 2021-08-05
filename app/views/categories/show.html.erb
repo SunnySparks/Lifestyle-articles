@@ -1,8 +1,27 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<div class="mt-5 pt-5">
+  <h1><%= @category.name %></h1>
+  <%= @category.articles.each do |art| %>
+    <%= art.title %>
+    <%= art.text %>
+    <% if art.avatar.attached? %>
+      <image src="<%=(url_for(art.avatar))%>">
+    <% end %>
 
-<%= @categories.each do |cat| %>
-<% end %>
+    <%= link_to like_article_path(art.id), method: :put do %>
+      Vote!
+    <% end %>
+  
+    <%= link_to dislike_article_path(art.id), method: :put do %>
+      Downvote
+    <% end %>
+
+    <% if art.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_article_path(art.id), class: 'art-card__button-link btn-warning' %>
+    <%= link_to 'Delete', article_path(art.id), method: :delete, class: 'art-card__button-link btn-danger' %>
+    <% end %>
+    <%= art.get_upvotes.size %>
+  <% end %>
+</div>
 
 <% @articles.each do |art| %>
   <%= art.title %>
