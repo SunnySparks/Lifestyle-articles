@@ -29,8 +29,8 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @articles = Article.all
-    @categories = Category.all.includes(:articles).order(priority: :desc)
+    @articles = Article.all.order(cached_votes_up: :desc)
+    @categories = Category.all.includes(:articles).order(cached_votes_up: :desc)
   end
 
   def edit

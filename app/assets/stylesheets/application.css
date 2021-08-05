@@ -109,3 +109,40 @@ nav a {
 .navbar {
   background-color: rgba(17, 17, 32);
 }
+
+.blog-post .edica-page-title {
+  text-align: center;
+}
+
+.blog-post .edica-blog-post-meta {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: #7d848b;
+  margin-bottom: 67px; 
+}
+
+  .blog-post .blog-post-featured-img {
+    margin-bottom: 44px; 
+}
+
+.login {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('/assets/hierve.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.login-heading {
+  font-weight: 300;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}

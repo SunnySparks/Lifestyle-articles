@@ -7,4 +7,8 @@ class Article < ApplicationRecord
   def score
     votes.count
   end
+
+  def self.highest_voted
+    self.order("cached_votes_up DESC")
+  end
 end
