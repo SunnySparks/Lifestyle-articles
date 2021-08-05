@@ -28,6 +28,7 @@ class CategoriesController < ApplicationController
   def show
     @article = Category.find(params[:id]).articles
     @articles = Article.all.order(cached_votes_score: :desc)
+    @categories = Category.all.includes(:articles).order(priority: :desc)
   end
 
   def edit; end

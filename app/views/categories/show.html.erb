@@ -1,6 +1,8 @@
 <h1>Categories#show</h1>
 <p>Find me in app/views/categories/show.html.erb</p>
 
+<%= @categories.each do |cat| %>
+<% end %>
 
 <% @articles.each do |art| %>
   <%= art.title %>
@@ -25,5 +27,7 @@
          </div>
      </article>
 <% end %>
+
+
 
 <%= link_to 'Back', :back %>
