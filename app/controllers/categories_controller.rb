@@ -26,7 +26,6 @@ class CategoriesController < ApplicationController
   end
 
   def show
-
     @articles = Article.all.order(:created_at).reverse_order
     @category = Category.find(params[:id])
     @categories = Category.all.includes(:articles).order(:created_at).reverse_order
