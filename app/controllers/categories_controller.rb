@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
     @articles = Article.all.order(cached_votes_score: :desc)
     @firstcat = Category.where({ :id => [1] }).includes(:articles)
     @categories = Category.all.includes(:articles).order(priority: :desc)
-    # @voted_article = Article.includes([:avatar_attachment]).get_most_votes
+    @voted_article = Article.includes([:avatar_attachment]).get_most_votes
   end
 
   def new
