@@ -1,8 +1,40 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class="mt-2 pt-2 mb-2 pb-2">
 
-<%= link_to like_article_path(@article), method: :put do %>
-    Vote!
-    <%= @article.get_upvotes.size %>
-  <% end %>
-  <%= link_to 'Back', :back %>
+    <div class="mt-5 pt-5 mb-5">
+    <main class="blog-post">
+    <div class="container">      
+
+        <h2 class="edica-page-title pb-1"><%= @article.title %></h2>
+          <p class="edica-blog-post-meta">
+            <% if @article.user_id == current_user.id %>
+              <%= link_to 'Edit', edit_article_path(@article.id), class: 'art-card__button-link btn-warning' %>
+              <%= link_to 'Delete', article_path(@article.id), method: :delete, class: 'art-card__button-link btn-danger' %>
+            <% end %>
+            <%= @article.get_upvotes.size %> Votes • 
+            <%= link_to like_article_path(@article.id), method: :put do %>
+              Vote! • 
+            <% end %>          
+            <%= link_to dislike_article_path(@article.id), method: :put do %>
+              Downvote
+            <% end %> 
+          </p>
+          <section class="blog-post-featured-img d-flex justify-content-center">
+            <% if @article.avatar.attached? %>
+              <image src="<%=(url_for(@article.avatar)) %>">
+            <% end %>
+          </section>
+          <section class="post-content">
+              <div class="row">
+                  <div class="col-lg-9 mx-auto" data-aos="fade-up">
+                  <%= @article.text %>
+                  </div>
+              </div>            
+          </div>
+
+              
+    </div>
+    <div class="pt-5 pb-5 container d-flex justify-content-center">
+    <%= link_to 'Back', :back, class: 'btn btn-light' %>
+  </div>
+    </main>
+  </div>

@@ -1,7 +1,53 @@
-<div>
-    <h2>Log In</h2>
-    <%= form_tag '/login' do %>
-        Username: <%= text_field_tag :name %><br>
-        <%= submit_tag 'Log In' %>
-    <% end %>
+<div class="container-fluid ps-md-0">
+<div class="row g-0">
+  <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+  <div class="col-md-8 col-lg-6">
+    <div class="login d-flex align-items-center py-5">
+      <div class="container">
+
+          <div class="row">
+          <div class="col-md-9 col-lg-8 mx-auto">
+            <h3 class="login-heading mb-4">Welcome back!</h3>
+
+
+                <div class="section">
+                    <div class="container">
+                        <div class="columns is-centered">
+                            <div class="column is-4">
+                
+                                <%= form_tag '/login' do %>
+                                    <%= text_field_tag :name %><br>
+                                    <p>Username</p><br>
+                                    <%= submit_tag 'Log In', class: "btn btn-large btn-primary" %>
+                                <% end %>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+              <div class="form-check mb-3">
+
+              </div>
+
+              <div class="form-check mb-3">
+              <p>Are you new here?</p>
+                <%= link_to "Create your account", new_user_path %>
+              </div>
+
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
 </div>
+</div>
+

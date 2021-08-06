@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  # before_validation user.password
   def new
     @user = User.new
   end

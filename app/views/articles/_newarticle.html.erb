@@ -1,11 +1,63 @@
-<%= form_with model: @article do |form| %>
-    <%= form.label :title, "Article Title" %>
-    <%= form.text_field :title %></br>
-    <%= form.label :text, "Add your text here" %>
-    <%= form.text_field :text %></br>
-    <div class="control">
-    <%= form.label :category, class: 'label | text-is-white' %>
-    <%= select_tag :category_id, options_for_select(@categories), class: 'input' %>
+<div class="container-fluid ps-md-0">
+<div class="row g-0">
+  <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+  <div class="col-md-8 col-lg-6">
+    <div class="login d-flex align-items-center py-5">
+      <div class="container">
+
+          <div class="row">
+          <div class="col-md-9 col-lg-8 mx-auto">
+            <h3 class="login-heading mb-4">Create your articles</h3>
+
+
+                <div class="section">
+                    <div class="container">
+                        <div class="columns is-centered">
+                            <div class="column is-4">
+                
+                            <%= form_with model: @article do |form| %>
+                              <%= form.label :title, "Article Title" %>
+                              <%= form.text_field :title %></br>
+                              <%= form.label :text, "Add your text here" %>
+                              <%= form.text_field :text, class: 'label' %></br>
+                              <%= form.label "Image" %>
+                              <%= form.file_field :avatar %></br>
+                              <div class="control">
+                              <%= form.label :category %>
+                              <%= select_tag :category_id, options_for_select(@categories), class: 'input' %>
+                            </div>
+                              <%= form.submit%>
+                             <% end %>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+              <div class="form-check mb-3">
+
+              </div>
+
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
   </div>
-    <%= form.submit%>
-   <% end %>
+</div>
+</div>
+
+<script>
+  $('form').on('keypress', e => {
+      if (e.keyCode == 13) {
+          return false;
+      }
+  });
+</script>

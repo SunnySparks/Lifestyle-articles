@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :find_article, only: %i[show update destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order(cached_votes_score: :desc)
     @categories = Category.all.includes(:articles).order(priority: :desc)
   end
 
@@ -15,7 +15,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    # @article = current_user.articles.new(title: params[:article_title], text: params[:article_text])
     @article = @current_user.articles.new(article_params)
     @article.category_id = params[:category_id]
     if @article.save
@@ -28,8 +27,9 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @articles = Article.all
-    @categories = Category.all.includes(:articles).order(priority: :desc)
+    @article = Article.find(params[:id])
+    @articles = Article.all.order(cached_votes_up: :desc)
+    @categories = Category.all.includes(:articles).order(cached_votes_up: :desc)
   end
 
   def edit
@@ -68,13 +68,13 @@ class ArticlesController < ApplicationController
   def downvote
     @article = Article.find(params[:id])
     @article.downvote_by current_user
-    redirect_to categories_path
+    redirect_back(fallback_location: root_path)
   end
 
   private
 
   def article_params
-    params.require(:article).permit(:title, :text, :category_id)
+    params.require(:article).permit(:title, :text, :category_id, :avatar)
   end
 
   def find_article

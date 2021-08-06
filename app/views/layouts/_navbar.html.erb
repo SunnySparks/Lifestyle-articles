@@ -1,31 +1,40 @@
-<header>
-    <div class='container'>
-        <%= image_tag '', class: 'page_logo'%>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <%= image_tag("logo.png", size: "90x70", :alt => "logo") %>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
 
-        <nav>
-            <ul>
-                <li><%= link_to 'New Article', new_article_url %></li>
-                <li><%= link_to 'New Category', new_category_url %></li>
-                <li><%= link_to 'Categories', categories_url %></li>
-            </ul>
-        </nav>
-    </div>
-
-    <% if logged_in? %>
-    <div class="p-2 "><%= link_to "Log out", logout_path %></div>
-  <% end %>
-
-</header>
-
-<div class="banner">
-  
-  
-  <div class="banner__content">
-    <h1 class="banner__content-title">
-      
-    </h1>
-    <p class="banner__content-description">
-      
-    </p>
-  </div>
+<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+  <ul class="navbar-nav m-auto pb-3">
+    <li class="nav-item active">
+      <%= link_to 'New Article', new_article_url, class: 'text-white' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'New Category', new_category_url, class: 'text-white' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Categories', categories_url, class: 'text-white' %>
+    </li>
+     
+      <% if logged_in? %>
+        <li>  
+          <%= link_to "Log out", logout_path, class: 'text-white' %>
+        </li>
+        <li>  
+          <span class="text-white">Welcome, <%= current_user.name %>!</span>
+        </li>
+      <% else %>
+        <li>  
+          <%= link_to "Log In", login_url, class: 'text-white' %>
+        </li>
+        <li>  
+          <p class='text-white'>|</p>
+        </li>
+        <li>  
+          <%= link_to "Sign up", new_user_path, class: 'text-white' %>
+        </li>
+      <% end %>
+    </li>
+  </ul>
 </div>
+</nav>

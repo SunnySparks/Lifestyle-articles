@@ -37,6 +37,8 @@ Style/EachForSimpleLoop:
   Enabled: false
 Style/EmptyMethod:
   Enabled: false
+Style/HashSyntax:
+  Enabled: false
 Style/AndOr:
   Enabled: false
 Style/SafeNavigation:
@@ -48,6 +50,8 @@ Style/DoubleNegation:
 Style/DefWithParentheses:
   Enabled: false
 Style/RedundantAssignment:
+  Enabled: false
+Style/RedundantSelf:
   Enabled: false
 Style/GuardClause:
   Enabled: false
