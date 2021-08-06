@@ -9,7 +9,6 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'hirb', '~> 0.7.3'
 gem 'jquery-rails'
-gem 'rails-assets-tether'
 gem 'rubocop', '~> 1.18', '>= 1.18.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
