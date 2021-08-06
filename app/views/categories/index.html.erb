@@ -4,24 +4,24 @@
 
 <main class="container">
 
-<div class="container p-4 main-article col-lg text-center mt-5 mb-5">
+<div class="container col-lg text-center mt-5 mb-5 text-white">
 
 
-<% @voted_article.take(1).each do |vot| %>       
 
-    <h3><%= vot.title %></h3></br>
-      
-    <p class="edica-blog-post-meta">
-    • <%= vot.get_upvotes.size %> Votes • 
-    </p>
+    <% @voted_article.take(1).each do |vot| %>       
+      <div class="bg-top" style="background-image: url(<%= rails_blob_url(vot.avatar) %>)">
+        <h3><%= vot.title %></h3></br>
+          
+        <p class="edica-blog-post-meta">
+        • <%= vot.get_upvotes.size %> Votes • 
+        </p>
+        <div class="m-5 p-5"></div>
+        <div class="m5 p-5"></div>
+        <h5 class="text-justify p-5"><%= vot.text %></h5></br>
+      </div>
+    <% end %>
 
-    <%= image_tag(vot.avatar,class: 'head-img') %></br>
-    <div class="m-3"></div>
-    <h5 class="text-justify"><%= vot.text %></h5></br>
-    <%= link_to "See more", article_path(vot) %>
-
-<% end %>
-
+  </div>
 </div>
 
     <div class="container p-4">
