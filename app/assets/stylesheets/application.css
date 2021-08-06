@@ -16,7 +16,7 @@
 
 .body,
 .brown-bg {
-  background-color: rgba(61, 52, 46);
+  background-color: rgb(61, 52, 46);
 }
 
 .background-footer {
@@ -65,7 +65,7 @@ nav a {
 }
 
 .cat-grid-cont {
-  background-color: rgba(248, 249, 250);
+  background-color: rgb(248, 249, 250);
 }
 
 .card-background {
