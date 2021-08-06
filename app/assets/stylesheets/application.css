@@ -16,6 +16,13 @@
 
 @import "bootstrap";
 
+.body, .brown-bg {
+  background-color: rgba(61, 52, 46);
+}
+
+.orange-text {
+  color: #F76209;
+}
 .headercontainer {
   width: 62.5em;
   margin: auto;
@@ -105,7 +112,7 @@ nav a {
 }
 
 .navbar {
-  background-color: rgba(17, 17, 32);
+  background-color: rgb(255, 255, 255);
 }
 
 .blog-post .edica-page-title {
@@ -171,4 +178,8 @@ nav a {
   background-attachment: fixed;
   background-position: center;
   background-size: auto;
+}
+
+.yellow-underline {
+  border-bottom: 3px solid #e6b566;
 }
