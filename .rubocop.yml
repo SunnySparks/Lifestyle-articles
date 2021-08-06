@@ -8,6 +8,7 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
+    - "Gemfile"
 
   DisplayCopNames: true
 
