@@ -11,7 +11,7 @@
                 <h3><%= link_to "#{cat.name}", category_path(cat.id), class: 'text-dark' %></h3></br>
                 <h4><%= c.title %></h4></br>
                 <div class="thumbnail m-auto">
-                  <%= image_tag(c.avatar, class: 'thumbnail-img') %></br>
+                  <%= image_tag(c.avatar, class: 'thumbnail-img') if c.avatar.attached? %></br>
                 </div>
                 <span></span></br>
               </div>
@@ -26,3 +26,11 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  $('form').on('keypress', e => {
+      if (e.keyCode == 13) {
+          return false;
+      }
+  });
+</script>

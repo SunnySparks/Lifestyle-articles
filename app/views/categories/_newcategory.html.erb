@@ -18,11 +18,11 @@
                               <div class="form-container">
                                 <%= form_with model: @category, class: 'form' do |f| %>
                                   <div class="control">
-                                    <%= f.label :name, class: 'label | text-is-white' %>
+                                    <%= f.label :name %>
                                     <%= f.text_field :name, class: 'input' %>
                                   </div>
                                   <div class="control">
-                                    <%= f.label :priority, class: 'label | text-is-white' %>
+                                    <%= f.label :priority %>
                                     <%= f.select :priority, [1, 2, 3, 4, 5], class: 'input' %>
                                   </div>
                                   <%= f.submit class: 'form__button | text-is-white' %>
