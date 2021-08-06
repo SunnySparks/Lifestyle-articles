@@ -9,6 +9,6 @@ class Article < ApplicationRecord
   end
 
   def self.highest_voted
-    self.order("cached_votes_up DESC")
+    self.order('cached_votes_up DESC')
   end
 end
