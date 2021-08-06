@@ -15,16 +15,18 @@
             <h2 class="edica-page-title pb-1"><%= art.title %></h2>
             <h5 class="edica-page-title pb-1">By: <%= art.user.name %></h5>
               <p class="edica-blog-post-meta">
-                <% if art.user_id == current_user.id %>
-                  <%= link_to 'Edit', edit_article_path(art.id), class: 'art-card__button-link badge badge-info' %> • 
-                  <%= link_to 'Delete', article_path(art.id), method: :delete, class: 'art-card__button-link badge badge-danger' %> • 
-                <% end %>
-                <%= art.get_upvotes.size %> Votes • 
-                <%= link_to like_article_path(art.id), method: :put do %>
-                  Vote!
-                <% end %> • 
-                <%= link_to dislike_article_path(art.id), method: :put do %>
-                  Downvote
+                <% if logged_in? %>
+                  <% if art.user_id == current_user.id %>
+                    <%= link_to 'Edit', edit_article_path(art.id), class: 'art-card__button-link badge badge-info' %> • 
+                    <%= link_to 'Delete', article_path(art.id), method: :delete, class: 'art-card__button-link badge badge-danger' %> • 
+                  <% end %>
+                  <%= art.get_upvotes.size %> Votes • 
+                  <%= link_to like_article_path(art.id), method: :put do %>
+                    Vote!
+                  <% end %> • 
+                  <%= link_to dislike_article_path(art.id), method: :put do %>
+                    Downvote
+                  <% end %> 
                 <% end %> 
               </p>
               

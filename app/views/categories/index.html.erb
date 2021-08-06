@@ -9,7 +9,7 @@
 
 
     <% @voted_article.take(1).each do |vot| %>       
-      <div class="bg-top" style="background-image: url(<%= rails_blob_url(vot.avatar) %>)">
+      <div class="bg-top p-2" style="background-image: url(<%= rails_blob_url(vot.avatar) %>)">
         <h3><%= vot.title %></h3></br>
           
         <p class="edica-blog-post-meta">
