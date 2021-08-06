@@ -1,42 +1,53 @@
 <div class="mt-2 pt-2">
 
-    <div class="mt-5 pt-5 mb-5">
-    <main class="blog-post">
-    <div class="container">
-        <h1 class="edica-page-title pb-1"><%= @category.name %></h1>        
-    <% @category.articles.each do |art| %>
-        <h2 class="edica-page-title pb-1"><%= art.title %></h2>
-        <h5 class="edica-page-title pb-1">By: <%= art.user.name %></h5>
-          <p class="edica-blog-post-meta">
-            <% if art.user_id == current_user.id %>
-              <%= link_to 'Edit', edit_article_path(art.id), class: 'art-card__button-link badge badge-info' %> • 
-              <%= link_to 'Delete', article_path(art.id), method: :delete, class: 'art-card__button-link badge badge-danger' %> • 
-            <% end %>
-            <%= art.get_upvotes.size %> Votes • 
-            <%= link_to like_article_path(art.id), method: :put do %>
-              Vote!
-            <% end %> • 
-            <%= link_to dislike_article_path(art.id), method: :put do %>
-              Downvote
-            <% end %> 
-          </p>
-          <section class="blog-post-featured-img d-flex justify-content-center">
-            <% if art.avatar.attached? %>
-              <image src="<%=(url_for(art.avatar)) %>">
-            <% end %>
-          </section>
-          <section class="post-content">
-              <div class="row">
-                  <div class="col-lg-9 mx-auto" data-aos="fade-up">
-                  <%= art.text %>
-                  </div>
-              </div>            
-          </div>
-    <% end %>
+  <div class="mt-5 pt-5 mb-5">
 
-    </div>
+    <main class="blog-post">
+
+      <div class="container text-white">
+      
+        <h1 class="edica-page-title pb-1"><%= @category.name %></h1>        
+        <% @category.articles.each do |art| %>
+          <div>
+            <h2 class="edica-page-title pb-1"><%= art.title %></h2>
+            <h5 class="edica-page-title pb-1">By: <%= art.user.name %></h5>
+              <p class="edica-blog-post-meta">
+                <% if art.user_id == current_user.id %>
+                  <%= link_to 'Edit', edit_article_path(art.id), class: 'art-card__button-link badge badge-info' %> • 
+                  <%= link_to 'Delete', article_path(art.id), method: :delete, class: 'art-card__button-link badge badge-danger' %> • 
+                <% end %>
+                <%= art.get_upvotes.size %> Votes • 
+                <%= link_to like_article_path(art.id), method: :put do %>
+                  Vote!
+                <% end %> • 
+                <%= link_to dislike_article_path(art.id), method: :put do %>
+                  Downvote
+                <% end %> 
+              </p>
+              
+              <section class="blog-post-featured-img d-flex justify-content-center">
+                <% if art.avatar.attached? %>
+                  <image src="<%=(url_for(art.avatar)) %>">
+                <% end %>
+              </section>
+
+              <section class="post-content">
+                  <div class="row">
+                      <div class="col-lg-9 mx-auto" data-aos="fade-up">
+                      <%= art.text %>
+                      </div>
+                  </div>            
+              </section>
+          </div>
+        <% end %>
+
+      </div>
+
     </main>
+
   </div>
+
+</div>
 
   <div class="pt-5 pb-5 container d-flex justify-content-center">
     <%= link_to 'Back', :back, class: 'btn btn-light' %>
