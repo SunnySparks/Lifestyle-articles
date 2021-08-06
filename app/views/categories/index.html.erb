@@ -15,7 +15,7 @@
     • <%= vot.get_upvotes.size %> Votes • 
     </p>
 
-    <%= image_tag(vot.avatar) %></br>
+    <%= image_tag(vot.avatar,class: 'head-img') %></br>
     <div class="m-3"></div>
     <h5 class="text-justify"><%= vot.text %></h5></br>
     <%= link_to "See more", article_path(vot) %>

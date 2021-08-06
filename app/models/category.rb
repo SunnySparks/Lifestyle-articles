@@ -7,6 +7,6 @@ class Category < ApplicationRecord
   scope :for_navbar, -> { limit(5) }
 
   def first_article
-    arr = articles.includes(:avatar_attachment).order(created_at: :desc).first
+    articles.includes(:avatar_attachment).order(created_at: :desc).first
   end
 end
