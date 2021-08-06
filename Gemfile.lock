@@ -258,7 +258,7 @@ DEPENDENCIES
   pg
   puma (~> 3.11)
   rails (~> 5.2.6)
-  rails-assets-bootstrap (>= 4.0.0.alpha.2)
+  rails-assets-bootstrap
   rails-assets-tether
   rubocop (~> 1.18, >= 1.18.3)
   sass-rails (~> 5.0)
