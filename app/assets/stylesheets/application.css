@@ -20,9 +20,10 @@
   background-color: rgba(61, 52, 46);
 }
 
-.orange-text {
-  color: #F76209;
+.background-footer{
+  background-color: #F76209;;
 }
+
 .headercontainer {
   width: 62.5em;
   margin: auto;
@@ -182,4 +183,15 @@ nav a {
 
 .yellow-underline {
   border-bottom: 3px solid #e6b566;
+}
+
+.squarecont {
+   margin:5px 5px 5px 5px;
+   width:auto;
+   height:auto;
+   position:relative;
+   overflow:hidden;
+   border:solid;
+   overflow: auto;
+   float:left;
 }
