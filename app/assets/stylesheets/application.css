@@ -153,8 +153,6 @@ nav a {
 .bg-img {
   width: 100%;
   height: 100%;
-
-  @include background-image();
 }
 
 .bg-top {
