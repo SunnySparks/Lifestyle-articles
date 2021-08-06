@@ -14,8 +14,6 @@
  *= require_self
  */
 
-@import "bootstrap";
-
 .body,
 .brown-bg {
   background-color: rgba(61, 52, 46);
