@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  belongs_to :category
+  belongs_to :category, dependent: :destroy
   belongs_to :user
   acts_as_votable
   has_one_attached :avatar

@@ -38,12 +38,12 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    @article = Article.find(params[:id])
     @categories = Category.all.map { |c| [c.name, c.id] }
+    @article.category_id = params[:category_id]
     if @article.update(article_params)
-      @article.artcats.first.delete
-      @article.categories << Category.find_by(id: params[:categories])
       flash[:success] = 'Article was successfully updated'
-      redirect_to @article
+      redirect_to categories_path
     else
       flash[:error] = 'Something went wrong'
       render 'edit'
