@@ -1,8 +1,9 @@
 class Article < ApplicationRecord
-  belongs_to :category, dependent: :destroy
+  has_many :categories
   belongs_to :user
   acts_as_votable
   has_one_attached :avatar
+  validates :avatar, attached: true
 
   def score
     votes.count

@@ -21,8 +21,12 @@ class ArticlesController < ApplicationController
       flash[:success] = 'New article created!'
       redirect_to categories_path
     else
+      if !@article.avatar.attached?
+      flash[:error] = 'No image attached, please add an image'
+      else
       flash[:error] = 'Something went wrong'
-      render 'new'
+      end
+      redirect_back(fallback_location: root_path)
     end
   end
 

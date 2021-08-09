@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.8'
 gem 'activestorage'
+gem 'active_storage_validations'
 gem 'acts_as_votable'
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 gem 'bootstrap', '~> 4.3.1'
@@ -11,6 +12,7 @@ gem 'hirb', '~> 0.7.3'
 gem 'jquery-rails'
 gem 'rubocop', '~> 1.18', '>= 1.18.3'
 gem 'sassc-rails', '>= 2.1.0'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
