@@ -1,9 +1,8 @@
 class Article < ApplicationRecord
   validates :avatar, attached: true
-  validates :title, length: { minimum: 3, maximum: 20 }
-  validates :text, length: { minimum: 10, maximum: 225 }
+  validates :title, presence: true, length: { minimum: 3, maximum: 20 }
+  validates :text, presence: true, length: { minimum: 10, maximum: 225 }
 
-  has_many :categories
   belongs_to :user
   acts_as_votable
   has_one_attached :avatar
