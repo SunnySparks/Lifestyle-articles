@@ -12,6 +12,7 @@ gem 'hirb', '~> 0.7.3'
 gem 'jquery-rails'
 gem 'rubocop', '~> 1.18', '>= 1.18.3'
 gem 'sassc-rails', '>= 2.1.0'
+gem 'shoulda-matchers'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
