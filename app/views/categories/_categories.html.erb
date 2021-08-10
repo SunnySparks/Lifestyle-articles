@@ -6,7 +6,7 @@
          
           <% cat.articles.highest_voted.take(1).each do |c| %>
  
-            <div class="col-4 justify-content-evenly text-left index-img p-2"> 
+            <div class="article-container col-3  justify-content-evenly text-left index-img"> 
               <div class="col p-2 bg-img", style="background-image: url(<%= rails_blob_url(c.avatar) %>)">  
                 <h3><%= link_to "#{cat.name}", category_path(cat.id), class: 'text-white yellow-underline' %></h3></br>
                   <div class="p-4 m-4"></div>

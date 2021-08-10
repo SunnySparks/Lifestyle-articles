@@ -23,8 +23,12 @@ class ArticlesController < ApplicationController
     else
       if !@article.avatar.attached?
       flash[:error] = 'No image attached, please add an image'
-      else
-      flash[:error] = 'Something went wrong'
+      end
+      if @article.title.length < 3
+      flash[:error] = 'Your title must have at least 3 characters' 
+      end
+      if @article.text.length > 225
+        flash[:error] = 'Your text is too long! Make it maximum 225 characters' 
       end
       redirect_back(fallback_location: root_path)
     end
