@@ -5,9 +5,8 @@ RSpec.feature 'Authentications', type: :feature do
   end
   let(:category) do
     Category.create(name: 'travel',
-                     priority: 1)
+                    priority: 1)
   end
-
 
   describe 'Category Page' do
     before do
