@@ -13,5 +13,4 @@ class ActiveSupport::TestCase
       with.library :rails
     end
   end
-  
 end
