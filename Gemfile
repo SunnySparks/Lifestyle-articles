@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.4'
+ruby '2.7.2'
 gem 'activestorage'
 gem 'active_storage_validations'
 gem 'acts_as_votable'
@@ -13,6 +13,7 @@ gem 'jquery-rails'
 
 gem 'rubocop', '~> 1.18', '>= 1.18.3'
 gem 'sassc-rails', '>= 2.1.0'
+gem 'shoulda', '~> 4.0'
 gem 'shoulda-matchers'
 
 # Run against the latest stable release

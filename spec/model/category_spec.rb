@@ -15,6 +15,6 @@ RSpec.describe Category, type: :model do
   end
 
   describe 'associations' do
-    it { should have_many(:articles).order('created_at desc') }
+    it { should have_many(:articles) }
   end
 end
