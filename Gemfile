@@ -11,7 +11,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'hirb', '~> 0.7.3'
 gem 'jquery-rails'
 gem 'rspec', '~> 3.5'
-gem "r_spec"
+gem 'r_spec'
 gem 'rubocop', '~> 1.18', '>= 1.18.3'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'shoulda', '~> 4.0'
@@ -57,7 +57,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'rspec-rails', '~> 4.1.0'
+  gem 'rspec-rails'
 end
 
 group :development do
