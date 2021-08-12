@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.2'
+ruby '2.5.8'
 gem 'activestorage'
 gem 'active_storage_validations'
 gem 'acts_as_votable'
@@ -10,11 +10,12 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'hirb', '~> 0.7.3'
 gem 'jquery-rails'
-gem 'rspec-rails'
 
 gem 'rubocop', '~> 1.18', '>= 1.18.3'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'shoulda-matchers'
+
+# Run against the latest stable release
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -54,6 +55,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails', '~> 4.1.0'
 end
 
 group :development do
