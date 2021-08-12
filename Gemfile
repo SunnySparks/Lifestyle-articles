@@ -14,8 +14,6 @@ gem 'rspec', '~> 3.5'
 gem 'r_spec'
 gem 'rubocop', '~> 1.18', '>= 1.18.3'
 gem 'sassc-rails', '>= 2.1.0'
-gem 'shoulda', '~> 4.0'
-gem 'shoulda-matchers'
 
 # Run against the latest stable release
 
