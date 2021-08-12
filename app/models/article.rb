@@ -8,8 +8,6 @@ class Article < ApplicationRecord
   acts_as_votable
   has_one_attached :avatar
 
-  
-
   def score
     votes.count
   end

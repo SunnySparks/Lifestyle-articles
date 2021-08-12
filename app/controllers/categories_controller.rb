@@ -1,8 +1,8 @@
 class CategoriesController < ApplicationController
   before_action :require_user, only: %i[create new]
-  def index 
+  def index
     @categories = Category.all.includes(:articles).order(priority: :desc)
-    @voted_article = Article.highest_voted.includes([:avatar_attachment, :user])
+    @voted_article = Article.highest_voted.includes(:avatar_attachment)
   end
 
   def new
