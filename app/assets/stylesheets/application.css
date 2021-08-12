@@ -185,7 +185,7 @@ nav a {
 .article-text {
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 56px;
+  height: 100px;
 }
 
 .article-container {

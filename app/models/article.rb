@@ -4,8 +4,11 @@ class Article < ApplicationRecord
   validates :text, presence: true, length: { minimum: 10, maximum: 225 }
 
   belongs_to :user
+  has_many :categories
   acts_as_votable
   has_one_attached :avatar
+
+  
 
   def score
     votes.count

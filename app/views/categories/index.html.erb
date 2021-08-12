@@ -10,21 +10,23 @@
 
     <% @voted_article.take(1).each do |vot| %>       
       <div class="bg-top p-2" style="background-image: url(<%= rails_blob_url(vot.avatar) %>)">
-        <h3><%= vot.title %></h3></br>
+
           
         <p class="edica-blog-post-meta">
-        • <%= vot.get_upvotes.size %> Votes • 
         </p>
         <div class="m-5 p-5"></div>
         <div class="m5 p-5"></div>
-        <h5 class="text-justify p-5 article-text"><%= vot.text %></h5></br>
+        <div class="">
+          <h3 class="text-left"><%= vot.title %></h3>
+          <h5 class="text-justify article-text"><%= vot.text %></h5></br>
+        </div>
       </div>
     <% end %>
 
   </div>
 </div>
 
-    <div class="container p-0">
+    <div class="container">
       <%= render 'categories' %>
     </div>
   </div>
