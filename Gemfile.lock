@@ -168,6 +168,10 @@ GEM
       ffi (~> 1.0)
     regexp_parser (2.1.1)
     rexml (3.2.5)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.1)
@@ -282,6 +286,7 @@ DEPENDENCIES
   pg
   puma (~> 3.11)
   rails (~> 5.2.6)
+  rspec (~> 3.5)
   rspec-rails (~> 4.1.0)
   rubocop (~> 1.18, >= 1.18.3)
   sass-rails (~> 5.0)
