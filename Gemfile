@@ -10,11 +10,13 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'hirb', '~> 0.7.3'
 gem 'jquery-rails'
+gem 'rack-timeout', '0.3.2'
 gem 'rubocop', '~> 1.18', '>= 1.18.3'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'shoulda-matchers'
 gem 'shoulda'
 gem 'test-unit'
+
 
 # Run against the latest stable release
 
