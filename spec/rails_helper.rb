@@ -25,7 +25,13 @@ require 'rspec/rails'
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
 begin
-  ActiveRecord::Migrator.migrate(Rails.root.join('db/migrate'))
+  if less_than_active_record_5_2?
+    ActiveRecord::Migrator.migrate("db/migrate/", env_migration_version)
+  elsif less_than_active_record_6_0?
+    ActiveRecord::MigrationContext.new("db/migrate/").migrate(env_migration_version)
+  else
+    ActiveRecord::MigrationContext.new("db/migrate/", ActiveRecord::SchemaMigration).migrate(env_migration_version)
+  end
 rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
