@@ -5,7 +5,6 @@ ruby '2.7.2'
 gem 'activestorage'
 gem 'active_storage_validations'
 gem 'acts_as_votable'
-gem 'bootstrap', '~> 4.3.1'
 gem 'hirb', '~> 0.7.3'
 gem 'jquery-rails'
 gem 'rack-timeout', '0.3.2'
@@ -68,10 +67,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-group :production do
-  gem 'pg'
- end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
