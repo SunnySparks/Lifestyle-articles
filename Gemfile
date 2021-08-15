@@ -1,11 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.4'
+ruby '2.7.2'
 gem 'activestorage'
 gem 'active_storage_validations'
 gem 'acts_as_votable'
-gem 'better_errors', '~> 2.9', '>= 2.9.1'
 gem 'bootstrap', '~> 4.3.1'
 gem 'hirb', '~> 0.7.3'
 gem 'jquery-rails'
@@ -62,12 +61,17 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'better_errors', '~> 2.9', '>= 2.9.1'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+group :production do
+  gem 'pg'
+ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
