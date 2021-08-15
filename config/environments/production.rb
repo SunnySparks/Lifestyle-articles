@@ -91,7 +91,7 @@ Rails.application.configure do
 
   config.assets.digest = true
   config.assets.compile = true
-  config.serve_static_assets = true
+  config.serve_static_assets = false
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
