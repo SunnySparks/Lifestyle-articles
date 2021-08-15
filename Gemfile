@@ -13,6 +13,7 @@ gem 'sassc-rails', '>= 2.1.0'
 gem 'shoulda-matchers'
 gem 'shoulda'
 gem 'test-unit'
+gem 'webpacker'
 
 
 # Run against the latest stable release
