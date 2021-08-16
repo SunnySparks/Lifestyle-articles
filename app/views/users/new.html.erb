@@ -1,0 +1,60 @@
+
+
+
+
+
+  <div class="container-fluid ps-md-0">
+  <div class="row g-0">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6 bg-white">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+
+          
+
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Create your account here</h3>
+
+
+
+
+              <div class="section">
+              <div class="container">
+                <div class="columns is-centered">
+                  <div class="column is-4">
+                  <% if flash[:error] %>
+                    <div class="alert alert-info"><%= flash[:error] %></div>
+                  <% end %>
+                      <%= form_for User.new do |f| %>
+                          <%= f.text_field :name %><br>
+                          <%= f.label :name %><br>
+                          <%= f.submit "Create Account", class: "btn btn-large btn-primary" %>
+                      <% end %>
+          
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+
+
+
+                <div class="form-check mb-3">
+
+                </div>
+
+                <div class="form-check mb-3">
+                <p>Do you have an account?</p>
+                  <%= link_to "Log In", login_url %>
+                </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

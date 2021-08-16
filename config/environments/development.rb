@@ -1,4 +1,5 @@
 Rails.application.configure do
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -39,7 +40,7 @@ Rails.application.configure do
   config.active_support.deprecation = :log
 
   # Raise an error on page load if there are pending migrations.
-  config.active_record.migration_error = :page_load
+  config.active_record.migration_error = false
 
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true

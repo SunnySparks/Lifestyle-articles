@@ -1,0 +1,5 @@
+<% @articles.each do |article| %>
+    <h4><%= link_to article.title, article %><br>
+      Submitted <%= time_ago_in_words(article.created_at) %> 
+    </h4>
+<% end %>
