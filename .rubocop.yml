@@ -8,6 +8,7 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
+    - "Gemfile"
 
   DisplayCopNames: true
 
@@ -55,6 +56,10 @@ Style/RedundantSelf:
   Enabled: false
 Style/GuardClause:
   Enabled: false
+Style/BlockComments:
+  Enabled: false
+Style/IfUnlessModifier:
+  Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 
@@ -68,6 +73,8 @@ Layout/MultilineMethodCallIndentation:
 Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
+  Enabled: false
+Lint/ShadowingOuterLocalVariable:
   Enabled: false
 Style/HashEachMethods:
   Enabled: false

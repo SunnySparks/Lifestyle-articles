@@ -21,8 +21,16 @@ class ArticlesController < ApplicationController
       flash[:success] = 'New article created!'
       redirect_to categories_path
     else
-      flash[:error] = 'Something went wrong'
-      render 'new'
+      unless @article.avatar.attached?
+        flash[:error] = 'No image attached, please add an image'
+      end
+      if @article.title.length < 3
+        flash[:error] = 'Your title must have at least 3 characters'
+      end
+      if @article.text.length > 225
+        flash[:error] = 'Your text is too long! Make it maximum 225 characters'
+      end
+      redirect_to root_path, notice: message
     end
   end
 
@@ -38,12 +46,12 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    @article = Article.find(params[:id])
     @categories = Category.all.map { |c| [c.name, c.id] }
+    @article.category_id = params[:category_id]
     if @article.update(article_params)
-      @article.artcats.first.delete
-      @article.categories << Category.find_by(id: params[:categories])
       flash[:success] = 'Article was successfully updated'
-      redirect_to @article
+      redirect_to categories_path
     else
       flash[:error] = 'Something went wrong'
       render 'edit'

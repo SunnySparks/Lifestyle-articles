@@ -1,11 +1,8 @@
 class CategoriesController < ApplicationController
   before_action :require_user, only: %i[create new]
   def index
-    @article = Article.new
-    @articles = Article.all.order(cached_votes_score: :desc)
-    @firstcat = Category.where({ :id => [1] }).includes(:articles)
     @categories = Category.all.includes(:articles).order(priority: :desc)
-    @voted_article = Article.highest_voted
+    @voted_article = Article.highest_voted.includes(:avatar_attachment)
   end
 
   def new
@@ -25,9 +22,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @articles = Article.all.order(:created_at).reverse_order
-    @category = Category.find(params[:id])
-    @categories = Category.all.includes(:articles).order(:created_at).reverse_order
+    @category = Category.includes(:articles).find(params[:id])
   end
 
   def edit; end

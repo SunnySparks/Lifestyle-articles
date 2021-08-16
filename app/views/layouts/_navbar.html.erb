@@ -1,37 +1,39 @@
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-        <%= image_tag("logo.png", size: "90x70", :alt => "logo") %>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
+<nav class='navbar navbar-expand-md navbar-dark fixed-top text-dark'>
+<li class="nav-item">
+      <%= link_to 'OAXACOOL 2.0', categories_url, class: 'text-dark' %>
+</li>
+<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarsExampleDefault' aria-controls='navbarsExampleDefault' aria-expanded='false' aria-label='Toggle navigation'>
+  <span class='navbar-toggler-icon'></span>
 </button>
 
 <div class="collapse navbar-collapse" id="navbarsExampleDefault">
   <ul class="navbar-nav m-auto pb-3">
     <li class="nav-item active">
-      <%= link_to 'New Article', new_article_url, class: 'text-white' %>
+      <%= link_to 'New Article', new_article_url, class: 'text-dark' %>
     </li>
     <li class="nav-item">
-      <%= link_to 'New Category', new_category_url, class: 'text-white' %>
+      <%= link_to 'New Category', new_category_url, class: 'text-dark' %>
     </li>
     <li class="nav-item">
-      <%= link_to 'Categories', categories_url, class: 'text-white' %>
+      <%= link_to 'Categories', categories_url, class: 'text-dark' %>
     </li>
      
       <% if logged_in? %>
         <li>  
-          <%= link_to "Log out", logout_path, class: 'text-white' %>
+          <%= link_to "Log out", logout_path, class: 'text-dark' %>
         </li>
         <li>  
-          <span class="text-white">Welcome, <%= current_user.name %>!</span>
+          <span class="text-dark">Welcome, <%= current_user.name %>!</span>
         </li>
       <% else %>
         <li>  
-          <%= link_to "Log In", login_url, class: 'text-white' %>
+          <%= link_to "Log In", login_url, class: 'text-dark' %>
         </li>
         <li>  
-          <p class='text-white'>|</p>
+          <p class='text-dark'>|</p>
         </li>
         <li>  
-          <%= link_to "Sign up", new_user_path, class: 'text-white' %>
+          <%= link_to "Sign up", new_user_path, class: 'text-dark' %>
         </li>
       <% end %>
     </li>

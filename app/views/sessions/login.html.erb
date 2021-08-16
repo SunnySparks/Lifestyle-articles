@@ -1,7 +1,7 @@
 <div class="container-fluid ps-md-0">
 <div class="row g-0">
   <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
-  <div class="col-md-8 col-lg-6">
+  <div class="col-md-8 col-lg-6 bg-white">
     <div class="login d-flex align-items-center py-5">
       <div class="container">
 
@@ -14,10 +14,12 @@
                     <div class="container">
                         <div class="columns is-centered">
                             <div class="column is-4">
-                
+                            <% if flash[:error] %>
+                              <div class="alert alert-info"><%= flash[:error] %></div>
+                            <% end %>
                                 <%= form_tag '/login' do %>
                                     <%= text_field_tag :name %><br>
-                                    <p>Username</p><br>
+                                    <p>Name</p><br>
                                     <%= submit_tag 'Log In', class: "btn btn-large btn-primary" %>
                                 <% end %>
 

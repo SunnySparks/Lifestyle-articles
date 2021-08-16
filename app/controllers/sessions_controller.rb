@@ -4,11 +4,10 @@ class SessionsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
-      redirect_to root_path
     else
-      message = 'Something went wrong, make sure your username is correct'
-      redirect_to root_path, notice: message
+      flash[:error] = 'Something went wrong, make sure your username is correct'
     end
+    redirect_to root_path
   end
 
   def destroy
