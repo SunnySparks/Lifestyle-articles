@@ -12,10 +12,10 @@ gem 'rails', '~> 5.2.6'
 gem 'activestorage'
 gem 'active_storage_validations'
 gem 'acts_as_votable'
+gem 'bundler', '>= 2.2.17'
 gem 'hirb', '~> 0.7.3'
 gem 'jquery-rails'
 gem 'rspec', '~> 3.5'
-gem 'r_spec'
 gem 'rubocop', '~> 1.18', '>= 1.18.3'
 gem 'sassc-rails', '>= 2.1.0'
 
@@ -71,6 +71,8 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+  gem 'shoulda'
+  gem 'shoulda-matchers'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'webdrivers', '~> 3.0'
 end
