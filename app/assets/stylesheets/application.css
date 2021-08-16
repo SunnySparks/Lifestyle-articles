@@ -193,3 +193,9 @@ nav a {
   padding-right: 0 !important;
   padding-left: 0 !important;
 }
+
+.shadowy {
+  text-shadow: 3px 0px 7px rgba(0, 0, 0, 0.8), 
+  -3px 0px 7px rgba(0,0,0,0.8), 
+  0px 4px 7px rgba(0,0,0,0.8);
+}
