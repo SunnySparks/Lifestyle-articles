@@ -12,5 +12,5 @@ class ActiveSupport::TestCase
       with.test_framework :minitest
       with.library :rails
     end
-  end  
+  end
 end
