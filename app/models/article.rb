@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   validates :avatar, attached: true
-  validates :title, presence: true, length: { minimum: 3, maximum: 20 }
+  validates :title, presence: true, length: { minimum: 3, maximum: 30 }
   validates :text, presence: true, length: { minimum: 10, maximum: 225 }
 
   belongs_to :user
