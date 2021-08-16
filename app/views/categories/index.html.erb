@@ -4,7 +4,7 @@
 
 <main class="container mt-5 mb-5">
 <% if flash[:error] %>
-<div class="alert alert-info"><%= flash[:error] %></div>
+  <div class="alert alert-info"><%= flash[:error] %></div>
 <% end %>
 <div class="container col-lg text-center mt-0 mb-0 text-white">
 
@@ -17,8 +17,9 @@
         <p class="edica-blog-post-meta">
         </p>
         <div class="m-5 p-5"></div>
-        <div class="m5 p-5"></div>
-        <div class="">
+        <div class="m-5 p-5"></div>
+        <div class="m-5 p-5"></div>
+        <div class="d-flex align-items-start flex-column align-self-end">
           <h3 class="text-left"><%= vot.title %></h3>
           <h5 class="text-justify article-text"><%= vot.text %></h5></br>
         </div>
