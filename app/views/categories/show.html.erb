@@ -8,7 +8,12 @@
     <main class="blog-post">
 
       <div class="container text-white">
-      
+      <div class="pt-5 pb-5 container">
+
+</div>
+<div class="pt-5 pb-5 container">
+
+</div>
         <h1 class="edica-page-title pb-1"><%= @category.name %></h1>        
         <% @category.articles.each do |art| %>
           <div>
@@ -56,4 +61,7 @@
 
   <div class="pt-5 pb-5 container d-flex justify-content-center">
     <%= link_to 'Back', :back, class: 'btn btn-light' %>
+  </div>
+
+  <div class="pt-5 pb-5 container">
   </div>

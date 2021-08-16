@@ -3,17 +3,16 @@
 
 
 <main class="container mt-5 mb-5">
-<% if flash[:error] %>
-  <div class="alert alert-info"><%= flash[:error] %></div>
-<% end %>
-<div class="container col-lg text-center mt-0 mb-0 text-white">
 
+<div class="container col-lg text-center mt-0 mb-0 text-white">
 
 
     <% @voted_article.take(1).each do |vot| %>       
       <div class="bg-top p-2" style="background-image: url(<%= rails_blob_url(vot.avatar) %>)">
 
-          
+        <% if flash[:error] %>
+        <div class="alert alert-info"><%= flash[:error] %></div>
+        <% end %> 
         <p class="edica-blog-post-meta">
         </p>
         <div class="m-5 p-5"></div>
@@ -43,3 +42,7 @@
 
   </div>
 </main>
+
+<div class="pt-5 pb-5 container">
+
+</div>
