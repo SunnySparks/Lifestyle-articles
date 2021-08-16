@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
       if @article.text.length > 225
         flash[:error] = 'Your text is too long! Make it maximum 225 characters'
       end
-      redirect_back(fallback_location: root_path)
+      redirect_to root_path, notice: message
     end
   end
 
