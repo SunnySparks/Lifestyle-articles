@@ -4,6 +4,10 @@ A blog that shows Oaxacan lifestyle and culture
 
 ![Homepage](images/home.png)
 
+## Video presentation
+
+https://www.loom.com/share/f28270bf681042878d639daf3fb7ee94
+
 ## Live version
 
 https://oaxacool2.herokuapp.com/
