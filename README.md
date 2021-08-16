@@ -16,9 +16,11 @@ https://oaxacool2.herokuapp.com/
 
 ## Prerequisites
 
-Ruby: 2.5.8 or +
-Rails: 5.2.6 or +
-Postgres: 9.5
+$ Ruby: 2.5.8$
+
+$ Rails: 5.2.6$
+
+$ Postgres: 9.5$
 
 ## How to use
 
@@ -40,6 +42,13 @@ $ bundle install
 
 ```
 
+Setup database with:
+```
+$ rails db:create
+rails db:migrate
+
+```
+
 Run the app
 ```
 $ rails server
@@ -47,6 +56,12 @@ $ rails server
 ```
 
 Open `http://localhost:3000/` in your browser.
+
+Run tests
+```
+$ rspec
+
+```
 
 
 ## Author

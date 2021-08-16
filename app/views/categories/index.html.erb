@@ -3,7 +3,9 @@
 
 
 <main class="container mt-5 mb-5">
-
+<% if flash[:error] %>
+<div class="alert alert-info"><%= flash[:error] %></div>
+<% end %>
 <div class="container col-lg text-center mt-0 mb-0 text-white">
 
 

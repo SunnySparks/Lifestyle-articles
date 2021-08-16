@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      message = 'Something went wrong, make sure your username is correct'
-      redirect_to root_path, notice: message
+      flash[:error] = 'Something went wrong, make sure your username is correct'
+      redirect_back(fallback_location: root_path)
     end
   end
 
