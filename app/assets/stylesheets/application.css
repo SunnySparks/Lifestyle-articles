@@ -195,7 +195,8 @@ nav a {
 }
 
 .shadowy {
-  text-shadow: 3px 0px 7px rgba(0, 0, 0, 0.8), 
-  -3px 0px 7px rgba(0,0,0,0.8), 
-  0px 4px 7px rgba(0,0,0,0.8);
+  text-shadow:
+    3px 0 7px rgba(0, 0, 0, 0.8),
+    -3px 0 7px rgba(0, 0, 0, 0.8),
+    0 4px 7px rgba(0, 0, 0, 0.8);
 }
