@@ -1,25 +1,18 @@
 <div class="container">
   <div class="row" >  
-    <% @categories.each do |cat| %> 
-      
-
-         
-          <% cat.articles.highest_voted.take(1).each do |c| %>
- 
-            <div class="article-container col-3  justify-content-evenly text-left index-img"> 
-              <div class="col p-2 bg-img", style="background-image: url(<%= rails_blob_url(c.avatar) %>)">  
-                <h3><%= link_to "#{cat.name}", category_path(cat.id), class: 'text-white yellow-underline shadowy' %></h3></br>
-                  <div class="p-4 m-4"></div>
-                <h4 class="text-white shadowy"><%= c.title %></h4></br>
+    <% @categories.each do |cat| %>                
+          <% cat.articles.highest_voted.take(1).each do |c| %> 
+            <div class="col-4 justify-content-evenly text-center p-2"> 
+              <div class="col p-2 cat-grid-cont">  
+                <h3><%= link_to "#{cat.name}", category_path(cat.id), class: 'text-dark' %></h3></br>
+                <h4><%= c.title %></h4></br>
+                <div class="thumbnail m-auto">
+                  <%= image_tag(c.avatar, class: 'thumbnail-img') if c.avatar.attached? %></br>
+                </div>
+                <span></span></br>
               </div>
             </div>
-
-          <% end %>
-          
-          
-          
-        
-      
+          <% end %>                         
     <% end %>
   </div>
 </div>

@@ -1,48 +1,31 @@
-<div class="m-4 p-4"></div>
+<main class="container pt-5">
 
+<div class="container p-1 main-article col-lg text-center cat-grid-cont mt-5 mb-5">
 
-
-<main class="container mt-1 mb-1">
-
-<div class="container col-lg text-center mt-0 mb-0 text-white">
-
-
-    <% @voted_article.take(1).each do |vot| %>       
-      <div class="bg-top p-2" style="background-image: url(<%= rails_blob_url(vot.avatar) %>)">
-
-        <% if flash[:error] %>
-        <div class="alert alert-info"><%= flash[:error] %></div>
-        <% end %> 
-        <p class="edica-blog-post-meta">
-        </p>
-        <div class="m-5 p-5"></div>
-        <div class="m-5 p-5"></div>
-        <div class="m-5 p-5"></div>
-        <div class="d-flex align-items-start flex-column align-self-end">
-          <h3 class="text-left shadowy"><%= vot.title %></h3>
-          <h5 class="text-justify article-text shadowy"><%= vot.text %></h5></br>
-        </div>
-      </div>
-    <% end %>
-
+<% @voted_article.take(1).each do |vot| %>       
+    <h3><%= vot.title %></h3></br>
+    <% if flash[:error] %>
+    <div class="alert alert-info"><%= flash[:error] %></div>
+    <% end %> 
+    <p class="edica-blog-post-meta">
+    • <%= vot.get_upvotes.size %> Votes • 
+    </p>
+    <%= image_tag(vot.avatar,class: 'head-img') %></br>
+    <div class="m-3"></div>
+    <h5 class="text-justify"><%= vot.text %></h5></br>
+    <%= link_to "See more", article_path(vot) %>
   </div>
+<% end %>
 </div>
 
-    <div class="container">
+    <div class="container p-1">
       <%= render 'categories' %>
     </div>
   </div>
 </main>
 
-<main class="container">
 
-  <div class="d-row">
-    
-
-
+<main class="p-5">
+  <div class="">
   </div>
 </main>
-
-<div class="pt-5 pb-5 container">
-
-</div>
